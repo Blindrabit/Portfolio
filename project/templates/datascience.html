@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+<title>Data Science and Machine Learning</title>
+{% endblock title %}
+
+
+
+
+
+{% block content %}
+
+<h2>Welcome to the Data Science and Machine learning Section</h2>
+
+<br>
+    <div class="row">
+        <div class="col-sm-8">
+            <p>In this section I will demostrate a number of different dataset I have working through.
+            In each case I will start by check the data to ensure there are no gaps, once any gaps have been resolved. 
+            Then I will move on to doing DataVisualtions and finially I will train a model to make prediction using 
+            an apropiate machine learning algorithm. For each section I will link to the project on Kaggle.com  
+            </p>
+        </div>
+        
+        <div class="col-sm-4">
+            <center><img src="{% static 'images/kaggle2.png' %}" class='rounded'></center>
+        </div>
+        
+    </div>
+
+<br>
+    <div class="row">
+        <div class="col-sm-4">
+            <center><img src="{% static 'images/airplane.jpg' %}"class='rounded'></center>
+        </div>
+    
+        <div class="col-sm-8">
+            <p><strong>January Flight Delay Prediction.</strong><br>
+            The challenge - using data on flight delays in Jan 2019 can a model be trained to predict whether a flight
+            will be delayed by more than 15mins in Jan 2020.<br>
+            <strong>Conclusion</strong> - I was able to get the model to predict reasonably well, the model was able to predict ~75% of
+            delays in 2020 from the 2019 data.<br>
+            <strong>What I could do better</strong> - I believe the model would benifit from have used the origin and destination data but 
+            when I tried I kept running into memory errors. 
+            <br>
+            <strong>Link to Note Book - <a href="https://www.kaggle.com/blindrabit/kernel33177e9359"target="_blank">Kaggle Note Book</a></strong>
+            </p>
+
+        </div>
+    </div>
+
+{% endblock content %}
+    

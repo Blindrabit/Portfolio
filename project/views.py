@@ -9,3 +9,6 @@ def index(request):
 
 def datascience(request):
     return render(request, 'datascience.html',{})
+
+def django(request):
+    return render(request, 'django.html',{})

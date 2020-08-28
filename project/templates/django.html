@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+<title>Django</title>
+{% endblock title %}
+
+
+{% block content %}
+
+    <h2>Welcome to the Django Section</h2>
+
+
+    <br>
+    <div class="row">
+        <div class="col-sm-8">
+            <p>After learning basics of Python, I looked at areas I could apply the skills I had learnt to real world projects. I followed a tutorial to produce a Task List Web app.
+                 This introduced me to Django and using MVC frameworks. Through this course I learnt the basics about urls, views, models and touched on using HTML to create the pages.
+                 I have continued to develop my skills by adding further features to this app. <br> 
+                 <br> 
+                Please click to see web page <strong> <a href="https://br-tm.herokuapp.com/"target="_blank">Link to Web App</a></strong>
+            </p>
+            
+
+        </div>
+        <div class="col-sm-4">
+            <center><img src="{% static 'images/django-logo.png' %}" class='rounded'></center>
+        </div>
+
+
+        <br>
+    <div class="row">
+        <div class="col-sm-4">
+            <center><img src="{% static 'images/calendar.png' %}"class='rounded'></center>
+        </div>
+    
+        <div class="col-sm-8">
+            <p>I have added features to the site to change the use to a recruitment tool. The concept of the site is to allow shift workers to update their availability, 
+                this is then automatically matched with available shifts needing their skill set. The first section I added calendar section where people can mark which hours they are free to work.
+                
+            </p>
+
+        </div>
+    </div>
+
+    <br>
+    <div class="row">
+        <div class="col-sm-8">
+            <p>There is a simple profile which has user updateable information such as email, username.
+                 It also holds information that the user cannot update this is used to hold information such as DBS number and which area’s they can work.
+            </p>
+            
+
+        </div>
+        <div class="col-sm-4">
+            <center><img src="{% static 'images/profile.png' %}" class='rounded'></center>
+        </div>
+    </div>
+
+
+    <br>
+    <br>
+    <div class="row">
+        <div class="col-sm-4">
+            <center><img src="{% static 'images/add_shift.png' %}"class='rounded'></center>
+        </div>
+    
+        <div class="col-sm-8">
+            <p>The finial section is an area for shifts to be added, this is area the user can add what kind of worker they require and the times they are needed.
+                    Once a shift is added the web app checks whether there is anyone has marked themselves available to work and automatically books them to the shift.<br><br>
+                    If they are booked onto the shifts it updates into their calendar to show the shift they are working.<br><br>
+
+            </p>
+
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-sm-8">
+            <p><Strong>What do I think of the site?</Strong><br>
+            I believe it was a great first attempt and shows a basic understanding of Django and MCV but I'm not happy with it. What I need to improve.<br><br>
+        1. Move to Postgresql for the database<br>
+        2. Use Docker for my development and production environments<br>
+        3. Use custom user model<br>
+        4. TESTS! Sadly when I started I did not recognise the importance of this.<br><br>
+        So I am currently rebuilding the site from the ground up to do it again implementing the new best practices I have learnt since I first built the app. </p>
+            
+
+        </div>
+        <div class="col-sm-4">
+            <center><img src="{% static 'images/profile.png' %}" class='rounded'></center>
+        </div>
+    </div>
+
+        
+
+
+{% endblock content %}

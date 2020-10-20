@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.views.generic import TemplateView
 
 def aboutme(request):
     return render(request, 'aboutme.html',{})
@@ -12,3 +13,6 @@ def datascience(request):
 
 def django(request):
     return render(request, 'django.html',{})
+
+class Djangov2(TemplateView):
+    template_name = 'djangov2.html'

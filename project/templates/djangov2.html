@@ -13,7 +13,7 @@
 <br>
 <div class="row">
     <div class="col-sm-8">
-        <p>Aim of this project: To build a production standard version of the web staffing app I built pervious. This would be done be using and learning about docker for me production environment, using PostgreSQL as the datebases, scraping the available shifts from a portal using the beautiful soup and asynchronous task manager with Celery with all the code being well tested. The app takes user inputs as their availability to work. Scraps the portal to update available shifts, then using an algorithm to match available shifts to users’ skills and availability.
+        <p><strong>Aim:</strong> To build a production standard version of the web staffing app I built previously. This will be done by using and learning about Docker for my production environment, using PostgreSQL as the database, scraping the available shifts from a portal using the Beautiful soup and asynchronous task manager with Celery while ensuring all the code is well tested. The app takes a user’s work availability as their input, scrapes the portal to update available shifts, then matches available shifts to users’ skills and availability using an algorithm.
         </p>
     </div>
     <div class="col-sm-4">
@@ -27,17 +27,18 @@
     </div>
 
     <div class="col-sm-8">
-        <p>I created a new Django project, rather than using virtual env I used pipenv to track the dependencies within the piplock file. Following this I created an image using docker to act as my development environment.
-            I added a .gitignore file I used this one from github <a href="https://github.com/jpadilla/django-project-template/blob/master/.gitignore"target="_blank">.gitignore Repository</a>. I then added the docker-compose.yml to hold my environment variables such as debug, secret key and allowed hosts and added that to the gitignore file
-            Once the .gitignore file was added I created a Github repository to store the code as I was able to work on it from both my main desktop and laptop when commuting. <a href ="https://github.com/Blindrabit/staffing_app_v2"target="_blank">GitHub Repository </a>
-            Once I had created the environment to develop in, I created a custom user model as now recommended.
-        </p>
+        <p><strong>Walk through of the project</strong></p></br></br>
+        I created a new Django project, and rather than using virtual env I used pipenv to track the dependencies within the piplock file. Following this I created an image using docker to act as my development environment.</br></br>
+        I added a .gitignore file I used this one from github <a href="https://github.com/jpadilla/django-project-template/blob/master/.gitignore">Link</a> and added the docker-compose.yml to hold my environment variables such as debug, secret key and allowed hosts and added this to the gitignore file.</br></br>
+        Once the .gitignore file was added I created a Github repository to store the code so I would be able to work on it from both my main desktop and laptop when commuting. <a href="https://github.com/Blindrabit/staffing_app_v2">Github Repository Link</a></br></br>
+        Once I had created the environment to develop in, I created a custom user model as now recommended in the Dajngo documentation.    
+    </p>
     </div>
 </div>
 <br>
 <div class="row">
     <div class="col-sm-8">
-        <p>To make my log in and log functionality I used Django All Auth to create a robust authentication system. I added the ability to reset passwords via an email link. The email backend is set up using Twilio ftp for simplicity but I’m planning to change to the Gmail interface on going foward.
+        <p>To make my log in and log functionality I used Django All Auth to create a robust authentication system and added the ability to reset passwords via an email link. The email backend is set up using the console backend but I will be utilizing Gmail SMTP.</br>
         <a href="https://github.com/Blindrabit/staffing_app_v2/tree/master/users"target="_blank">User App GitHub</a>
         </p>
     </div>
@@ -51,12 +52,12 @@
         <center><img src="{% static 'images/calendar.png' %}"class='rounded'></center>
     </div>
     <div class="col-sm-8">
-        <p>After this it was time to start adding the functionality of the website. I created a model with a form to take the time and date of each worker is available to work. <br>
-            I also added a html calendar to display their availability/booked shifts in a readable format. The user is able to click on text, which will take them through to the object edit page or if the shift is booked the detail page. To guide me through adding this I used this guide
+        <p>After this it was time to start adding the functionality of the website. I created a model with a form to take the time and date that each worker is available to work. <br>
+            I also added a html calendar to display their availability/booked shifts in a readable format. The user is able to click on text, which will take them through to the object edit page, or to the detail page if the shift is booked. I used these instructions to guide me through this
             <a href="https://www.huiwenteo.com/normal/2018/07/24/django-calendar.html"target="_blank">HTML Calendar Guide</a> <br>
             I plan on adding two email conformations here.<br>
-                1.	Every time availability is added to send a confirmation of the updated availability <br>
-                2.	Every time the object moves from available to booked confirmation of the shift’s details and a conformation link to confirm they have seen the shift has been booked.<br>
+                1.	Confirmation of the updated availability every time availability is added  <br>
+                2.	2.	Every time the object moves from available to booked, confirmation of the shift’s details and a confirmation link to confirm the user has seen that the shift has been booked.<br>
             <a href="https://github.com/Blindrabit/staffing_app_v2/tree/master/calendar_app"target="_blank">Calendar App GitHub</a>
         </p>
     </div>
@@ -64,7 +65,7 @@
 <br>
 <div class="row">
     <div class="col-sm-8">
-        <p>The next functionality was to add the shifts model for this I needed more information from the users such as which hospitals and area they can work. I updated the custom user model to include a hospital field and area field. I added this to using a manytomany field and created models for each field. I then added the fields to the sign up form and to make it easier for the user to select their options I added the FilteredSelectMultiple widget which I liked from the Django admin panel. I found a useful <A href="https://stackoverflow.com/questions/57820652/need-guidance-with-filteredselectmultiple-widget"target="_blank">Stack Overflow post here</A>on how to implement them. Although this created a small issue with the field header for the following field not rendering in the correct place and this still needs to be resolved.
+        <p>The next functionality to add was the shifts model. For this I needed more information from the users such as which hospitals and area they can work. I updated the custom user model to include a hospital field and area field and added this using a manytomany field and created models for each field. I then added the fields to the sign up form, and to make it easier for the user to select their options I added the FilteredSelectMultiple widget which I liked from the Django admin panel. I found a useful Stack Overflow post here:<A href="https://stackoverflow.com/questions/57820652/need-guidance-with-filteredselectmultiple-widget"target="_blank">GitHub Link</A>on how to implement them. However, this created a small issue with the field header for the following field not rendering in the correct place which this still needs to be resolved.
         <a href="https://github.com/Blindrabit/staffing_app_v2/blob/master/templates/account/signup.html"target="_blank">Sign Up Template GitHub</a> | <a href="https://github.com/Blindrabit/staffing_app_v2/tree/master/users"target="_blank">User App GitHub</a>
         </p>
     </div>
@@ -79,7 +80,7 @@
     </div>
 
     <div class="col-sm-8">
-        <p>Once I had the correct information being captured by the sign-up process, I finished the shift model which accepted start time, end time, hospital and area. I added a simple form to accept this information. Although the plan is to not use this method and have the shift info scraped from the customers website and automatically updated.
+        <p>Once I had the correct information being captured by the sign-up process, I finished the shift model which accepted start time, end time, hospital and area. I added a simple form to accept this information. In the long term, the plan is to scrape the shift information from the customers website and automatically updated.
             <a href="https://github.com/Blindrabit/staffing_app_v2/tree/master/shifts"target="_blank">Shifts App Github</a>
         </p>
     </div>
@@ -87,7 +88,7 @@
 <br>
 <div class="row">
     <div class="col-sm-8">
-        <p>Following this I then wrote an algorithm to compare all available shifts and user availability and automatically books the user onto the shift whilst updating the shift info to the user. Created this is triggered using the post_save signal when a shift is saved. But this will be added to a celery task and will run periodically to avoid slowing the website down for the users.
+        <p>Following this, I then wrote an algorithm to compare all available shifts and user availability and automatically book the user onto the shift whilst updating the shift information to the user. I created this by using the post_save signal when a shift is saved to trigger the function. In the future this will be added to a celery task and will run periodically to avoid slowing the website down for the users.
         <a href="https://github.com/Blindrabit/staffing_app_v2/blob/master/shifts/utils.py"target="_blank">Sign Up Template GitHub</a>
         </p>
     </div>
@@ -102,8 +103,8 @@
     </div>
 
     <div class="col-sm-8">
-        <p>At this point the app may look similar to the previous app, there have been many improvements to the structure and scalability of the app. Such as it is using a production standard database. One of the biggest improvements is the tests I have written to check the website is functioning, this will make it much easier to debug as the app grows.<br>
-            Next steps<br>
+        <p>At this point the app may look similar to the previous version however, there have been many improvements to the structure and scalability of the app such as using a production standard database. One of the biggest improvements is the tests I have written to check the website is functioning, which will make it much easier to debug as the app grows.<br>
+            <strong>Next steps:</stron><br>
             Step up a message manager and run the async tasks with Celery and Redis<br>
             Create a web scraper using thebeautifulsoup and mechinicaslsoup<br>
 

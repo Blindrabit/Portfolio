@@ -104,7 +104,7 @@
 
     <div class="col-sm-8">
         <p>At this point the app may look similar to the previous version however, there have been many improvements to the structure and scalability of the app such as using a production standard database. One of the biggest improvements is the tests I have written to check the website is functioning, which will make it much easier to debug as the app grows.<br>
-            <strong>Next steps:</stron><br>
+            <strong>Next steps:</strong><br>
             Step up a message manager and run the async tasks with Celery and Redis<br>
             Create a web scraper using thebeautifulsoup and mechinicaslsoup<br>
 
@@ -112,5 +112,51 @@
         </p>
     </div>
 </div>
+<br>
+<div class="row">
+    <div class="col-sm-8">
+        <p>To do this I used The Beautiful Soup with lxml. I used my first attempt of the staffing app as a website to scrape - it held all of the information I required and also has an authorisation system, so I would need to deal with logging in as well. To deal with this I used Mechanical Soup to create a stateful browser and navigate within the website whilst only having to log in once.
+        <a href="https://github.com/Blindrabit/staffing_app_v2/blob/master/shifts/scrape.py"target="_blank">GitHub Scrape.py</a>
+        </p>
+    </div>
+    <div class="col-sm-4">
+        <center><img src="{% static 'images/beautifulsouplogo.png' %}" class='rounded'></center>
+    </div>
+</div>
+<br>
+<div class="row">
+    <div class="col-sm-4">
+        <center><img src="{% static 'images/Celery.png' %}"class='rounded'></center>
+    </div>
 
+    <div class="col-sm-8">
+        <p>I needed to set up a separate worker to perform this task and the matching algorithm so it didn’t affect the performance of the app. To do this I used Celery and Redis. I created a function which ran the scraping function first and then the auto matching function periodically.
+
+            <a href="#"target="_blank">#######</a>
+        </p>
+    </div>
+</div>
+<br>
+<div class="row">
+    <div class="col-sm-8">
+        <p>I deployed the app on Heroku,  installed GUnicorn and set about using Django’s ‘python manage.py deploy’ to help configure the security settings. I also created a docker-compose.prod.yml file to hold my production settings and set up simple ‘if’ statements within the setting.py file so I could have the useful Django development setting while I was developing on my own system.<br><br>
+            When pushing the items up to Heroku I had to configure a third dyno to run my celery worker. Sadly there is no free way to do this, so for the time being I am leaving this dyno off. 
+        <a href="#"target="_blank">####</a>
+        </p>
+    </div>
+    <div class="col-sm-4">
+        <center><img src="{% static 'images/heroku-logo.png' %}" class='rounded'></center>
+    </div>
+</div>
+<br>
+<div class="row">
+    <div class="col-sm-8">
+        <p>I’m happy with my progress on the monolithic portion of the site. I improved on all aspects of my first attempt where I identified there was room for improvement. Although software is never finished and the landscape is always moving, for now I’m happy with how far I’ve taken this portion. I will be adding Django Rest Framework APIs out of the backend as this is really where the tech world has moved to - an API first approach. 😊 
+        <a href="#"target="_blank">####</a>
+        </p>
+    </div>
+    <div class="col-sm-4">
+        <center><img src="{% static 'images/code image.jpg' %}" class='rounded'></center>
+    </div>
+</div>
 {% endblock content %}

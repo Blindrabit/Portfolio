@@ -16,3 +16,6 @@ def django(request):
 
 class Djangov2(TemplateView):
     template_name = 'djangov2.html'
+
+class DjangoRestFramework(TemplateView):
+    template_name = 'drf.html'

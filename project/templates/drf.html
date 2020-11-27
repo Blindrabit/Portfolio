@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    <title>Django Rest Framework</title>
+{% endblock title %}
+    
+
+
+
+{% block content %}
+
+<h2>Django Rest Framework</h2>
+<br>
+<div class="row">
+    <div class="col-sm-8">
+        <p>The world of coding has moved on from the monolithic website and moved to a more focused design, where each element is focused on its own task. API acts as the bridge between the backend database and the frontend. My aim of this portion was to give the same functionality that I have on the monolithic portion of the app, but using APIs using Django Rest Framework (DRF) so a JS framework could utilize the APIs to build a front end. I started by installing DRF and adding it to the installed apps. I started an app to hold all my APIs. If I was to do this again I would have broken up all of the APIs into their own separate app like I did with the monolithic app.
+        </p>
+    </div>
+    <div class="col-sm-4">
+        <center><img src="{% static 'images/drflogo.png' %}" class='rounded'></center>
+    </div>
+</div>
+<br>
+<div class="row">
+    <div class="col-sm-4">
+        <center><img src="{% static 'images/Moby-logo.png' %}"class='rounded'></center>
+    </div>
+
+    <div class="col-sm-8">
+        <p>I started by creating the calendar and shift list APIs, giving the ability to view, create, edit and delete all objects for both models. The models are the same models used by the other part of the app. Currently the permissions need updating as any user can view any user’s calendar objects.
+    </p>
+    </div>
+</div>
+<br>
+<div class="row">
+    <div class="col-sm-8">
+        <p>The second part I needed to add was a robust authentication system, for this I used DRF & DJ Rest Auth. Using the DRF log in and out API, the user registration section added some complexity as I needed to add some custom fields to the sign-up form. To do this I extended the DJ Rest Auth RegisterSerializer to my own CustomRegisterSerializer and added the additional fields I needed to display. Following this, I updated the DefaultAccountAdapter to save the custom fields including the ones which are ManytoMany relationships.
+        </p>
+    </div>
+    <div class="col-sm-4">
+        <center><img src="{% static 'images/django-logo.png' %}" class='rounded'></center>
+    </div>
+</div>
+<br>
+<div class="row">
+    <div class="col-sm-4">
+        <center><img src="{% static 'images/Moby-logo.png' %}"class='rounded'></center>
+    </div>
+
+    <div class="col-sm-8">
+        <p>In most businesses the person creating the APIs won’t be the same person creating the frontend. I created a dynamic schema in a user-friendly format and created two types using Swagger and Redoc. 
+    </p>
+    </div>
+</div>
+{% endblock content %}

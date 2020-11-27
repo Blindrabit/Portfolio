@@ -27,7 +27,7 @@
     </div>
 
     <div class="col-sm-8">
-        <p><strong>Walk through of the project</strong></p></br></br>
+        <p><strong>Walkthrough of the project</strong></p></br></br>
         I created a new Django project, and rather than using virtual env I used pipenv to track the dependencies within the piplock file. Following this I created an image using docker to act as my development environment.</br></br>
         I added a .gitignore file I used this one from github <a href="https://github.com/jpadilla/django-project-template/blob/master/.gitignore">Link</a> and added the docker-compose.yml to hold my environment variables such as debug, secret key and allowed hosts and added this to the gitignore file.</br></br>
         Once the .gitignore file was added I created a Github repository to store the code so I would be able to work on it from both my main desktop and laptop when commuting. <a href="https://github.com/Blindrabit/staffing_app_v2">Github Repository Link</a></br></br>
@@ -116,7 +116,7 @@
 <div class="row">
     <div class="col-sm-8">
         <p>To do this I used The Beautiful Soup with lxml. I used my first attempt of the staffing app as a website to scrape - it held all of the information I required and also has an authorisation system, so I would need to deal with logging in as well. To deal with this I used Mechanical Soup to create a stateful browser and navigate within the website whilst only having to log in once.
-        <a href="https://github.com/Blindrabit/staffing_app_v2/blob/master/shifts/scrape.py"target="_blank">GitHub Scrape.py</a>
+        <a href="https://github.com/Blindrabit/staffing_app_v2/blob/master/shifts/scrape.py"target="_blank">GitHub scrape.py</a>
         </p>
     </div>
     <div class="col-sm-4">
@@ -132,7 +132,7 @@
     <div class="col-sm-8">
         <p>I needed to set up a separate worker to perform this task and the matching algorithm so it didn’t affect the performance of the app. To do this I used Celery and Redis. I created a function which ran the scraping function first and then the auto matching function periodically.
 
-            <a href="#"target="_blank">#######</a>
+            <a href="https://github.com/Blindrabit/staffing_app_v2/blob/master/config/celery.py"target="_blank">Github celery.py</a>
         </p>
     </div>
 </div>
@@ -141,7 +141,7 @@
     <div class="col-sm-8">
         <p>I deployed the app on Heroku,  installed GUnicorn and set about using Django’s ‘python manage.py deploy’ to help configure the security settings. I also created a docker-compose.prod.yml file to hold my production settings and set up simple ‘if’ statements within the setting.py file so I could have the useful Django development setting while I was developing on my own system.<br><br>
             When pushing the items up to Heroku I had to configure a third dyno to run my celery worker. Sadly there is no free way to do this, so for the time being I am leaving this dyno off. 
-        <a href="#"target="_blank">####</a>
+        <a href="https://boiling-plains-60428.herokuapp.com/"target="_blank">Deployed Staffing App</a>
         </p>
     </div>
     <div class="col-sm-4">
@@ -150,13 +150,12 @@
 </div>
 <br>
 <div class="row">
-    <div class="col-sm-8">
-        <p>I’m happy with my progress on the monolithic portion of the site. I improved on all aspects of my first attempt where I identified there was room for improvement. Although software is never finished and the landscape is always moving, for now I’m happy with how far I’ve taken this portion. I will be adding Django Rest Framework APIs out of the backend as this is really where the tech world has moved to - an API first approach. 😊 
-        <a href="#"target="_blank">####</a>
-        </p>
-    </div>
     <div class="col-sm-4">
         <center><img src="{% static 'images/code image.jpg' %}" class='rounded'></center>
+    </div>
+    <div class="col-sm-8">
+        <p>I’m happy with my progress on the monolithic portion of the site. I improved on all aspects of my first attempt where I identified there was room for improvement. Although software is never finished and the landscape is always moving, for now I’m happy with how far I’ve taken this portion. I will be adding Django Rest Framework APIs out of the backend as this is really where the tech world has moved to - an API first approach. 😊 
+        </p>
     </div>
 </div>
 {% endblock content %}
